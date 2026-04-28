@@ -1,0 +1,71 @@
+package Ecommerce.backend;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import java.math.BigDecimal;
+@Entity
+
+public class Produto{
+@Id 
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+private Long id;
+private  BigDecimal preco;
+private int quantidadeEstoque;
+private  String ImagemUrl;
+private String categoria;
+
+ 
+
+
+public Produto(){
+
+
+
+public Long getId(){
+
+    return id;
+}
+public void setId(Long id){
+this.id = id;
+
+}
+
+public BigDecimal getPreco(){
+    return preco;
+}
+
+public void  setPreco(BigDecimal preco){
+
+    this.preco=preco;
+}
+
+public int getquantidadeEstoque(){
+
+    return quantidade_Estoque;
+}
+public void setquantidadeEstoque(int quantidadeEstoque){
+
+   this.quantidadeEstoque = quantidadeEstoque;
+}
+
+public String getImagemUrl(){
+    return ImagemUrl;
+}
+public void setImagemUrl(String ImagemUrl){
+
+    this.ImagemUrl = ImagemUrl;
+}
+
+public String getCategoria(){
+return categoria;
+
+}
+
+public void setCategoria(String categoria){
+    this.categoria = categoria;
+}
+}
+}
