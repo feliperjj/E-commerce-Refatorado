@@ -1,9 +1,10 @@
-package Ecommerce.backend;
+package Ecommerce.backend.controller;
 import org.springframework.stereotype.Service;
-import Ecommerce.backend.Produto;
+import Ecommerce.backend.domain.Produto;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/api/v1/produtos")

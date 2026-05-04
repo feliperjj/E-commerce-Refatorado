@@ -1,9 +1,10 @@
-package Ecommerce.backend;
+package Ecommerce.backend.controller;
 import org.springframework.stereotype.Service;
-import Ecommerce.backend.Produto;
+import Ecommerce.backend.domain.Produto;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.http.ResponseEntity;
 
 
 @RestController
@@ -50,7 +51,7 @@ public ResponseEntity<Usuario> alterarUsuario(@PathVariable Long id,@RequestBody
  .map(usuarioExistente ->{
 
     usuarioExistente.setnomeUsuario(usuario.getnomeUsuario());
-    usuarioExistente.setEmail(usuario.getEmail())
+    usuarioExistente.setEmail(usuario.getEmail());
 
     Usuario alterarUsuario = UsuarioRepositorio.save(usuarioExistente);
     return ResponseEntity.ok(alterarUsuario);

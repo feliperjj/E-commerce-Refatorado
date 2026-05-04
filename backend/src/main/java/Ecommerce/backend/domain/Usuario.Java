@@ -1,4 +1,4 @@
-package Ecommerce.backend;
+package Ecommerce.backend.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
