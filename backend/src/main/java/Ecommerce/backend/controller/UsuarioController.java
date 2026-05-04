@@ -1,6 +1,9 @@
 package Ecommerce.backend.controller;
 import org.springframework.stereotype.Service;
 import Ecommerce.backend.domain.Produto;
+import Ecommerce.backend.domain.Usuario;
+import Ecommerce.backend.repository.ProdutoRepositorio;
+import Ecommerce.backend.repository.UsuarioRepositorio;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -38,8 +41,8 @@ return repositorio.save(usuario);
 }
 @DeleteMapping("/{id}")
 public ResponseEntity<Void> deletar (@PathVariable Long id){
-return repositorio.deleteById(id);
-return ResponseEntity.noContent().build();
+ repositorio.deleteById(id);
+ return ResponseEntity.noContent().build();
 
 }
 
@@ -53,7 +56,7 @@ public ResponseEntity<Usuario> alterarUsuario(@PathVariable Long id,@RequestBody
     usuarioExistente.setnomeUsuario(usuario.getnomeUsuario());
     usuarioExistente.setEmail(usuario.getEmail());
 
-    Usuario alterarUsuario = UsuarioRepositorio.save(usuarioExistente);
+    Usuario alterarUsuario = repositorio.save(usuarioExistente);
     return ResponseEntity.ok(alterarUsuario);
  })
 .orElse(ResponseEntity.notFound().build());

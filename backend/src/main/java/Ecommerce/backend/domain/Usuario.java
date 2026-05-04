@@ -45,13 +45,13 @@ public void setSenha(String senha){
     this.senha = senha;
 }
 
-public String getNomeUsuario(){
+public String getnomeUsuario(){
 
 return nomeUsuario;
 
 }
 
-public void setNomeUsuario(String nomeUsuario){
+public void setnomeUsuario(String nomeUsuario){
 
     this.nomeUsuario = nomeUsuario;
 }

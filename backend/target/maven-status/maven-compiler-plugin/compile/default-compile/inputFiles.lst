@@ -1,5 +1,7 @@
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/BackendApplication.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/controller/ProdutoController.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/controller/UsuarioController.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/domain/Produto.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/domain/Usuario.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/repository/ProdutoRepositorio.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/repository/UsuarioRepositorio.java

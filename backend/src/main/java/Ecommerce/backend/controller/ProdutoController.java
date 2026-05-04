@@ -1,6 +1,9 @@
 package Ecommerce.backend.controller;
 import org.springframework.stereotype.Service;
 import Ecommerce.backend.domain.Produto;
+import Ecommerce.backend.domain.Usuario;
+import Ecommerce.backend.repository.ProdutoRepositorio;
+import Ecommerce.backend.repository.UsuarioRepositorio;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;

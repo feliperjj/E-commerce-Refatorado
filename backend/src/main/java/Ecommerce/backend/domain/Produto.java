@@ -21,8 +21,7 @@ private String categoria;
 
 
 public Produto(){
-
-
+}
 
 public Long getId(){
 
@@ -44,7 +43,7 @@ public void  setPreco(BigDecimal preco){
 
 public int getquantidadeEstoque(){
 
-    return quantidade_Estoque;
+    return quantidadeEstoque;
 }
 public void setquantidadeEstoque(int quantidadeEstoque){
 
@@ -66,6 +65,5 @@ return categoria;
 
 public void setCategoria(String categoria){
     this.categoria = categoria;
-}
 }
 }
