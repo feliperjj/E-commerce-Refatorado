@@ -16,14 +16,15 @@ public ProdutoService(ProdutoRepositorio repositorio){
     this.repositorio = repositorio;
 }
 
-public ProdutoRequestDto salvar(ProdutoRequestDto dto){
+public ProdutoResponseDto salvar(ProdutoRequestDto dto){
 
 Produto produto = new Produto();
 produto.setNome(dto.nomeProduto());
 produto.setPreco(dto.preco());
-produto.setquantidadeEstoque(dto.quantidadedeEstoque());
+produto.setquantidadeEstoque(dto.quantidadeEstoque());
 produto.setCategoria(dto.categoria());
 Produto salvo = repositorio.save(produto);
+return new ProdutoResponseDto (salvo.getNome(),salvo.getPreco(),salvo.getquantidadeEstoque(),salvo.getCategoria());
 }
 
 

@@ -6,15 +6,6 @@ import java.math.BigDecimal;
 
 public record ProdutoResponseDto(String nomeProduto,BigDecimal preco,int quantidadeEstoque,String Categoria){
 
-public ProdutoResponseDto salvar(ProdutoResponseDto dto){
-
-String nomeProduto;
-BigDecimal preco;
-int quantidadedeEstoque;
-String categoria;
-Produto salvo = repositorio.save(produto);
-
-}
 
 
 

@@ -16,15 +16,15 @@ public UsuarioService(UsuarioRepositorio repositorio){
     
 }
 
-public UsuarioRequestDto salvar (UsuarioRequestDto dto){
+public UsuarioResponseDto salvar (UsuarioRequestDto dto){
 
 Usuario usuario = new Usuario();
-usuario.setNome(dto.nome());
+usuario.setnomeUsuario(dto.nome());
 usuario.setEmail(dto.email());
 usuario.setSenha(dto.senha());
 
 Usuario salvo = repositorio.save(usuario);
-
+return new UsuarioResponseDto (salvo.getnomeUsuario(),salvo.getEmail(),salvo.getId());
 }
 
 
