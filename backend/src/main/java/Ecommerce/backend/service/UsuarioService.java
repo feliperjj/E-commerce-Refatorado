@@ -1,9 +1,8 @@
 package Ecommerce.backend.service;
 import Ecommerce.backend.domain.Usuario;
-import Ecommerce.backend.dto.UsuarioRequestDto;
-import Ecommerce.backend.dto.UsuarioResponseDto;
-import Ecommerce.backend.repository.UsuarioRepositorio;
-import Ecommerce.backend.repository.UsuarioRepository;
+import Ecommerce.backend.domain.*;
+import Ecommerce.backend.dto.*;
+import Ecommerce.backend.repository.*;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,14 +16,14 @@ public UsuarioService(UsuarioRepositorio repositorio){
     
 }
 
-public UsuarioDTO salvar (UsuarioDTO dto){
+public UsuarioRequestDto salvar (UsuarioRequestDto dto){
 
 Usuario usuario = new Usuario();
 usuario.setNome(dto.nome());
 usuario.setEmail(dto.email());
 usuario.setSenha(dto.senha());
 
-Usuario salvo = repositorio.save(usuario);
+
 
 }
 

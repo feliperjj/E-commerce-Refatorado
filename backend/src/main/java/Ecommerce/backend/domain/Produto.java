@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class Produto{
 @Id 
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+private String nomeProduto;
 private Long id;
 private  BigDecimal preco;
 private int quantidadeEstoque;
@@ -22,6 +22,17 @@ private String categoria;
 
 public Produto(){
 }
+
+public String getNome(){
+
+return nomeProduto;
+
+}
+public void setNome(String nomeProduto){
+
+this.nomeProduto = nomeProduto;
+}
+
 
 public Long getId(){
 

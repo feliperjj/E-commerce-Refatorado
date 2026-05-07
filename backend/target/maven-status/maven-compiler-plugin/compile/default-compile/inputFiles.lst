@@ -3,5 +3,11 @@
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/controller/UsuarioController.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/domain/Produto.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/domain/Usuario.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/dto/ProdutoRequestDto.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/dto/ProdutoResponseDto.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/dto/UsuarioRequestDto.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/dto/UsuarioResponseDto.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/repository/ProdutoRepositorio.java
 /workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/repository/UsuarioRepositorio.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/service/ProdutoService.java
+/workspaces/E-commerce-Refatorado/backend/src/main/java/Ecommerce/backend/service/UsuarioService.java
