@@ -61,7 +61,7 @@ public ResponseEntity<Produto> alterarProduto(@PathVariable Long id,@RequestBody
 return repositorio.findById(id)
 .map(produtoExistente -> {
 
-produtoExistente.setnomeProduto(produto.getnomeProduto());
+produtoExistente.setnomeProduto(produto.getNome());
 produtoExistente.setquantidadeEstoque(produto.getquantidadeEstoque());
 produtoExistente.setCategoria(produto.getCategoria());
 produtoExistente.setpreco(produto.getPreco());

@@ -23,7 +23,7 @@ usuario.setNome(dto.nome());
 usuario.setEmail(dto.email());
 usuario.setSenha(dto.senha());
 
-
+Usuario salvo = repositorio.save(usuario);
 
 }
 

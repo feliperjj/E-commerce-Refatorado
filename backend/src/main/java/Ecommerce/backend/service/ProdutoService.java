@@ -19,11 +19,11 @@ public ProdutoService(ProdutoRepositorio repositorio){
 public ProdutoRequestDto salvar(ProdutoRequestDto dto){
 
 Produto produto = new Produto();
-produto.setNome(dto.nome());
-produto.setpreco(dto.preco());
+produto.setNome(dto.nomeProduto());
+produto.setPreco(dto.preco());
 produto.setquantidadeEstoque(dto.quantidadedeEstoque());
 produto.setCategoria(dto.categoria());
-
+Produto salvo = repositorio.save(produto);
 }
 
 
