@@ -2,9 +2,9 @@ package Ecommerce.backend.controller;
 import org.springframework.stereotype.Service;
 import Ecommerce.backend.domain.Produto;
 import Ecommerce.backend.domain.Usuario;
-import Ecommerce.backend.repository.ProdutoRepositorio;
-import Ecommerce.backend.repository.UsuarioRepositorio;
+import Ecommerce.backend.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
+import Ecommerce.backend.dto.*;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
@@ -15,54 +15,54 @@ import org.springframework.http.ResponseEntity;
 
 public class UsuarioController{
 
-private final UsuarioRepositorio repositorio;
+private final UsuarioService service;
 
-public UsuarioController (UsuarioRepositorio repositorio){
+public UsuarioController (UsuarioService service){
 
-this.repositorio = repositorio;
+this.service = service;
 
 
 }
 
-@GetMapping
+// @GetMapping
 
-public List<Usuario> listar ( ){
+// public List<Usuario> listar ( ){
 
 
-return repositorio.findAll();
+// return service.findAll();
 
-}
+// }
 
 @PostMapping
-public Usuario criar(@RequestBody Usuario usuario){
+public UsuarioResponseDto criar(@RequestBody UsuarioRequestDto dto ){
 
-return repositorio.save(usuario);
-
-}
-@DeleteMapping("/{id}")
-public ResponseEntity<Void> deletar (@PathVariable Long id){
- repositorio.deleteById(id);
- return ResponseEntity.noContent().build();
+return service.salvar(dto);
 
 }
+// @DeleteMapping("/{id}")
+// public ResponseEntity<Void> deletar (@PathVariable Long id){
+//  service.deleteById(id);
+//  return ResponseEntity.noContent().build();
+
+// }
 
 
-@PutMapping("/{id}")
+// @PutMapping("/{id}")
 
-public ResponseEntity<Usuario> alterarUsuario(@PathVariable Long id,@RequestBody Usuario usuario){
- return repositorio.findById(id)
- .map(usuarioExistente ->{
+// public ResponseEntity<Usuario> alterarUsuario(@PathVariable Long id,@RequestBody UsuarioRequestDto dto){
+//  return service.findById(id)
+//  .map(usuarioExistente ->{
 
-    usuarioExistente.setnomeUsuario(usuario.getnomeUsuario());
-    usuarioExistente.setEmail(usuario.getEmail());
+//     usuarioExistente.setnomeUsuario(dto.getnomeUsuario());
+//     usuarioExistente.setEmail(dto.getEmail());
 
-    Usuario alterarUsuario = repositorio.save(usuarioExistente);
-    return ResponseEntity.ok(alterarUsuario);
- })
-.orElse(ResponseEntity.notFound().build());
-}
+//     Usuario alterarUsuario = service.save(usuarioExistente);
+//     return ResponseEntity.ok(alterarUsuarioResponseDto);
+//  })
+// .orElse(ResponseEntity.notFound().build());
+// }
 
-}
+ }
 
 
 
