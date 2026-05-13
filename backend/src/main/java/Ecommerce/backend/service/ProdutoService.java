@@ -25,13 +25,12 @@ produto.setquantidadeEstoque(dto.quantidadeEstoque());
 produto.setImagemUrl(dto.ImagemUrl());
 produto.setCategoria(dto.categoria());
 Produto salvo = repositorio.save(produto);
-return new ProdutoResponseDto (salvo.getNome(),salvo.getPreco(),salvo.getquantidadeEstoque(),salvo.getImagemUrl(),salvo.getCategoria());
+return new ProdutoResponseDto( salvo.getNome(), salvo.getPreco(), salvo.getquantidadeEstoque(), salvo.getImagemUrl(), salvo.getCategoria() );
 }
-
 public List <ProdutoResponseDto> listarProdutos(){
 
 
-return repositorio.findAll().stream().map(produto -> new ProdutoResponseDto(produto.getnomeProduto(),produto.getId(),produto.getpreco(),produto.getquantidadeEstoque(),produto.getCategoria())).toList();
+return repositorio.findAll().stream().map(produto -> new ProdutoResponseDto(produto.getNome(),produto.getPreco(),produto.getquantidadeEstoque(),produto.getImagemUrl(),produto.getCategoria())).toList();
 
 }
 
@@ -39,10 +38,10 @@ public void deletar(Long id){
 
     repositorio.deleteById(id);
 }
-public ProdutoResponseDto busca (Long id){
+// public ProdutoResponseDto busca (Long id){
 
-    repositorio.findById(id);
-}
+//     repositorio.findById(id);
+// }
 
 public ProdutoResponseDto alterarDTO(Long id,ProdutoRequestDto dto){
 
@@ -53,8 +52,7 @@ produto.setquantidadeEstoque(dto.quantidadeEstoque());
 produto.setImagemUrl(dto.ImagemUrl());
 produto.setCategoria(dto.categoria());
 Produto salvo = repositorio.save(produto);
-
-return new ProdutoResponseDto (salvo.getNome(),salvo.getPreco(),salvo.getquantidadeEstoque(),salvo.getImagemUrl(),salvo.getCategoria());
+return new ProdutoResponseDto( salvo.getNome(), salvo.getPreco(), salvo.getquantidadeEstoque(), salvo.getImagemUrl(), salvo.getCategoria() );
 }
 
 

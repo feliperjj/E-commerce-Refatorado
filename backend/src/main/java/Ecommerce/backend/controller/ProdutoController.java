@@ -49,12 +49,12 @@ return ResponseEntity.noContent().build();
 
 
 
-@GetMapping("/buscar")
+// @GetMapping("/buscar")
 
-public ResponseEntity<ProdutoResponseDto>buscar (@RequestParam long id,@RequestBody RequestDto dto){
-return service.busca(id);
+// public ResponseEntity<ProdutoResponseDto>buscar (@RequestParam long id,@RequestBody RequestDto dto){
+// return service.busca(id);
 
-}
+// }
 
 @PutMapping("/{id}")
 
@@ -62,7 +62,7 @@ public ResponseEntity<ProdutoResponseDto> alterarProduto(@PathVariable Long id,@
 
 
 ProdutoResponseDto atualizado = service.alterarDTO(id,dto);
-return ResponseEntity.ok(alterarProduto);
+return ResponseEntity.ok(atualizado);
 
 
 

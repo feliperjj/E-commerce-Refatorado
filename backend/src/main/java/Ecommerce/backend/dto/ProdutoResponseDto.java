@@ -4,7 +4,7 @@ import Ecommerce.backend.dto.ProdutoRequestDto;
 import Ecommerce.backend.repository.ProdutoRepositorio;
 import java.math.BigDecimal;
 
-public record ProdutoResponseDto(String nomeProduto,BigDecimal preco,int quantidadeEstoque,String Categoria){
+public record ProdutoResponseDto(String nomeProduto,BigDecimal preco,int quantidadeEstoque,String ImagemUrl,String Categoria){
 
 
 

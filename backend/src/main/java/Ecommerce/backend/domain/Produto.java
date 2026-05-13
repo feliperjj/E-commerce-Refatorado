@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 public class Produto{
 @Id 
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private String nomeProduto;
 private Long id;
+ private String nomeProduto;
 private  BigDecimal preco;
 private int quantidadeEstoque;
 private  String ImagemUrl;
