@@ -1,9 +1,11 @@
 package Ecommerce.backend.controller;
+
 import org.springframework.stereotype.Service;
 import Ecommerce.backend.domain.Produto;
-import Ecommerce.backend.repository.ProdutoRepositorio;
-import java.math.BigDecimal;
+import Ecommerce.backend.service.ProdutoService;
 import org.springframework.web.bind.annotation.*;
+import Ecommerce.backend.dto.ProdutoRequestDto;
+import Ecommerce.backend.dto.ProdutoResponseDto;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
@@ -14,33 +16,33 @@ import org.springframework.http.ResponseEntity;
 
 public class ProdutoController{
 
-private final ProdutoRepositorio repositorio;
+private final ProdutoService service;
 
-public ProdutoController(ProdutoRepositorio repositorio){
+public ProdutoController(ProdutoService service){
 
-    this.repositorio = repositorio;
+    this.service = service;
 }
 
 @GetMapping
 
-public List<Produto> listar(){
+public List<ProdutoResponseDto> listar(){
 
-    return repositorio.findAll();
+    return service.listarProdutos();
 }
 
 @PostMapping 
 
-public Produto criar(@RequestBody Produto produto){
+public ProdutoResponseDto criar(@RequestBody ProdutoRequestDto dto){
 
 
-    return repositorio.save(produto);
+    return service.salvar(dto);
 
 }
 
 @DeleteMapping("/{id}")
 public ResponseEntity<Void> deletar(@PathVariable Long id){
 
-repositorio.deleteById(id);
+service.deletar(id);
 return ResponseEntity.noContent().build();
 
 }
@@ -49,28 +51,18 @@ return ResponseEntity.noContent().build();
 
 @GetMapping("/buscar")
 
-public Optional<Produto> buscar (@RequestParam long id){
-return repositorio.findById(id);
+public ResponseEntity<ProdutoResponseDto>buscar (@RequestParam long id,@RequestBody RequestDto dto){
+return service.busca(id);
 
 }
 
 @PutMapping("/{id}")
 
-public ResponseEntity<Produto> alterarProduto(@PathVariable Long id,@RequestBody Produto produto){
+public ResponseEntity<ProdutoResponseDto> alterarProduto(@PathVariable Long id,@RequestBody ProdutoRequestDto dto){
 
-return repositorio.findById(id)
-.map(produtoExistente -> {
 
-produtoExistente.setNome(produto.getNome());
-produtoExistente.setquantidadeEstoque(produto.getquantidadeEstoque());
-produtoExistente.setCategoria(produto.getCategoria());
-produtoExistente.setPreco(produto.getPreco());
-
-Produto alterarProduto = repositorio.save(produtoExistente);
+ProdutoResponseDto atualizado = service.alterarDTO(id,dto);
 return ResponseEntity.ok(alterarProduto);
-
-})
-.orElse(ResponseEntity.notFound().build());
 
 
 

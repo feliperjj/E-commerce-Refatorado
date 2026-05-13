@@ -49,7 +49,7 @@ public class UsuarioController {
      public ResponseEntity<UsuarioResponseDto> alterarUsuario(@PathVariable Long
      id,@RequestBody UsuarioRequestDto dto){
      
-        UsuarioResponseDto atualizado = service .alterarDTO(id,dto);
+        UsuarioResponseDto atualizado = service.alterarDTO(id,dto);
         return ResponseEntity.ok(atualizado);
      }
 
