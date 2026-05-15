@@ -1,4 +1,5 @@
 package Ecommerce.backend.dto;
+import jakarta.validation.constraints.*;
 
-public record UsuarioRequestDto(String nome,String email,String senha) {
+public record UsuarioRequestDto(@NotBlank String nome,@Email String email,String senha) {
 }

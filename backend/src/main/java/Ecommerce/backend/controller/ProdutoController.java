@@ -9,6 +9,7 @@ import Ecommerce.backend.dto.ProdutoResponseDto;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/produtos")
@@ -32,7 +33,7 @@ public List<ProdutoResponseDto> listar(){
 
 @PostMapping 
 
-public ProdutoResponseDto criar(@RequestBody ProdutoRequestDto dto){
+public ProdutoResponseDto criar(@Valid @RequestBody ProdutoRequestDto dto){
 
 
     return service.salvar(dto);
@@ -58,7 +59,7 @@ return ResponseEntity.noContent().build();
 
 @PutMapping("/{id}")
 
-public ResponseEntity<ProdutoResponseDto> alterarProduto(@PathVariable Long id,@RequestBody ProdutoRequestDto dto){
+public ResponseEntity<ProdutoResponseDto> alterarProduto(@PathVariable Long id,@Valid @RequestBody ProdutoRequestDto dto){
 
 
 ProdutoResponseDto atualizado = service.alterarDTO(id,dto);

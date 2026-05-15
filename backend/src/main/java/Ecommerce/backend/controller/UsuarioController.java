@@ -9,6 +9,7 @@ import Ecommerce.backend.dto.*;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/usuarios")
@@ -32,7 +33,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public UsuarioResponseDto criar(@RequestBody UsuarioRequestDto dto) {
+    public UsuarioResponseDto criar(@Valid @RequestBody UsuarioRequestDto dto) {
 
         return service.salvar(dto);
 
@@ -47,7 +48,7 @@ public class UsuarioController {
      @PutMapping("/{id}")
 
      public ResponseEntity<UsuarioResponseDto> alterarUsuario(@PathVariable Long
-     id,@RequestBody UsuarioRequestDto dto){
+     id,@Valid@RequestBody UsuarioRequestDto dto){
      
         UsuarioResponseDto atualizado = service.alterarDTO(id,dto);
         return ResponseEntity.ok(atualizado);
