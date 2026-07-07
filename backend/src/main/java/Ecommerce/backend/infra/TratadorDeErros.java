@@ -1,5 +1,11 @@
 package Ecommerce.backend.infra;
-
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.validation.FieldError;
 import Ecommerce.backend.dto.ErroDeValidacaoDto;
 
 @RestControllerAdvice
