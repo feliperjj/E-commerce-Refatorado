@@ -1,3 +1,4 @@
+Ecommerce/backend/domain/ItemPedido.class
 Ecommerce/backend/repository/ProdutoRepositorio.class
 Ecommerce/backend/dto/ProdutoResponseDto.class
 Ecommerce/backend/dto/UsuarioRequestDto.class
@@ -9,6 +10,7 @@ Ecommerce/backend/service/UsuarioService.class
 Ecommerce/backend/infra/TratadorDeErros.class
 Ecommerce/backend/domain/Usuario.class
 Ecommerce/backend/domain/Produto.class
+Ecommerce/backend/domain/Pedido.class
 Ecommerce/backend/controller/ProdutoController.class
 Ecommerce/backend/dto/ErroDeValidacaoDto.class
 Ecommerce/backend/controller/UsuarioController.class
